@@ -35,8 +35,7 @@ const Calendario: React.FC = () => {
 
 	const onEventDragFinish: OnEventDragFinish = (
 		kalendEventoINalterado: CalendarEvent,
-		kalendEventoAtualizado: CalendarEvent,
-		events: any
+		kalendEventoAtualizado: CalendarEvent
 	) => {
 		const evento = eventos.find(
 			evento => evento.descricao === kalendEventoAtualizado.summary
@@ -52,7 +51,7 @@ const Calendario: React.FC = () => {
 				const index = listaAntiga.findIndex(event => event.id === evento.id);
 				return [
 					...listaAntiga.slice(0, index),
-					evento,
+					eventoAtualizado,
 					...listaAntiga.slice(index + 1),
 				];
 			});
@@ -71,6 +70,7 @@ const Calendario: React.FC = () => {
 				calendarIDsHidden={["work"]}
 				language={"customLanguage"}
 				customLanguage={ptBR}
+				onEventDragFinish={onEventDragFinish}
 			/>
 		</div>
 	);
