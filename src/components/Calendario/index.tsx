@@ -32,10 +32,14 @@ const Calendario: React.FC = () => {
 	});
 
 	const onEventDragFinish: OnEventDragFinish = (
-		prevEvent: CalendarEvent,
-		updatedEvent: CalendarEvent,
+		kalendEventoINalterado: CalendarEvent,
+		kalendEventoAtualizado: CalendarEvent,
 		events: any
-	) => {};
+	) => {
+		const evento = eventos.find(
+			evento => evento.descricao === kalendEventoAtualizado.summary
+		);
+	};
 
 	return (
 		<div className={style.Container}>
