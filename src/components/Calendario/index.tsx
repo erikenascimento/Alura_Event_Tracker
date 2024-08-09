@@ -1,6 +1,6 @@
 import style from "./Calendario.module.scss";
 import ptBR from "./localizacao/ptBR.json";
-import Kalend, { CalendarView } from "kalend";
+import Kalend, { CalendarEvent, CalendarView, OnEventDragFinish } from "kalend";
 import "kalend/dist/styles/index.css";
 import { useRecoilValue } from "recoil";
 import { listaDeEventosState } from "../../state/atom";
@@ -30,6 +30,13 @@ const Calendario: React.FC = () => {
 			color: "blue",
 		});
 	});
+
+	const onEventDragFinish: OnEventDragFinish = (
+		prevEvent: CalendarEvent,
+		updatedEvent: CalendarEvent,
+		events: any
+	) => {};
+
 	return (
 		<div className={style.Container}>
 			<Kalend
