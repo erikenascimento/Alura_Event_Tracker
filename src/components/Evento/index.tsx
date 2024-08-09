@@ -7,8 +7,7 @@ import { listaDeEventosState } from "../../state/atom";
 
 const Evento: React.FC<{
 	evento: IEvento;
-	aoAlterarStatus: (id: number) => void;
-}> = ({ evento, aoAlterarStatus }) => {
+}> = ({ evento }) => {
 	const setListaDeEventos = useSetRecoilState<IEvento[]>(listaDeEventosState);
 
 	const excluirEvento = () => {
