@@ -39,6 +39,13 @@ const Calendario: React.FC = () => {
 		const evento = eventos.find(
 			evento => evento.descricao === kalendEventoAtualizado.summary
 		);
+		if (evento) {
+			const eventoAtualizado = {
+				...evento,
+			};
+			eventoAtualizado.inicio = new Date(kalendEventoAtualizado.startAt);
+			eventoAtualizado.fim = new Date(kalendEventoAtualizado.endAt);
+		}
 	};
 
 	return (
