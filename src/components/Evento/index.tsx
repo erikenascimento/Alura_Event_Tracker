@@ -25,7 +25,7 @@ const Evento: React.FC<{
 
 	return (
 		<div className={estilos.join(" ")}>
-			<EventoCheckbox evento={evento} aoAlterarStatus={aoAlterarStatus} />
+			<EventoCheckbox evento={evento} />
 			<div className="cards-info">
 				<h3 className={style.descricao}>
 					{evento.descricao} - {evento.inicio.toLocaleDateString()}
